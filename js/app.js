@@ -1,9 +1,11 @@
 /**
  * SHU.HA.RI ARCHITECTURE STUDIO
- * Interactive Core Engine
+ * Universal Device Intelligence & Interactive Engine
+ * Supporting Android, iOS, macOS, Windows, Linux across all browsers
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDeviceIntelligence();
   initThemeToggle();
   initHeaderScroll();
   initPhilosophySwitcher();
@@ -17,34 +19,129 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------------
-   1. THEME SWITCHER (Linen vs Nocturne)
+   1. UNIVERSAL DEVICE & VIEWPORT INTELLIGENCE
+   Detects OS (iOS, Android, macOS, Windows, Linux), Browser, Device Category,
+   Touch capabilities, and manages dynamic viewport units (--vh).
+   -------------------------------------------------------------------------- */
+function initDeviceIntelligence() {
+  const root = document.documentElement;
+
+  function detectOS() {
+    const ua = navigator.userAgent || '';
+    const platform = navigator.platform || '';
+
+    if (/iPad|iPhone|iPod/.test(ua) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+      return 'ios';
+    }
+    if (/Android/i.test(ua)) {
+      return 'android';
+    }
+    if (/Macintosh|MacIntel|MacPPC|Mac68K/i.test(ua)) {
+      return 'macos';
+    }
+    if (/Win32|Win64|Windows|WinCE/i.test(ua)) {
+      return 'windows';
+    }
+    if (/Linux/i.test(ua)) {
+      return 'linux';
+    }
+    return 'other';
+  }
+
+  function detectBrowser() {
+    const ua = navigator.userAgent || '';
+    if (/SamsungBrowser/i.test(ua)) return 'samsung';
+    if (/Edg/i.test(ua)) return 'edge';
+    if (/Firefox|FxiOS/i.test(ua)) return 'firefox';
+    if (/Chrome|CriOS/i.test(ua) && !/Edg/i.test(ua)) return 'chrome';
+    if (/Safari/i.test(ua) && !/Chrome/i.test(ua)) return 'safari';
+    return 'other';
+  }
+
+  function updateDimensions() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // Fix iOS/Android 100vh browser address bar jumping bug
+    const vh = height * 0.01;
+    root.style.setProperty('--vh', `${vh}px`);
+
+    // Screen size classification
+    let screenClass = 'xl';
+    if (width <= 380) screenClass = 'xs';        // Compact mobile (iPhone SE)
+    else if (width <= 540) screenClass = 'sm';   // Standard mobile (iPhone 14/15/16, Galaxy S)
+    else if (width <= 768) screenClass = 'md';   // Large mobile / Phablet
+    else if (width <= 1024) screenClass = 'lg';  // Tablet portrait/landscape
+    else screenClass = 'xl';                     // Desktop / Laptop / 4K
+
+    // Device classification
+    const hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    let deviceType = 'desktop';
+    if (width < 768) {
+      deviceType = 'mobile';
+    } else if (width <= 1024 && hasTouch) {
+      deviceType = 'tablet';
+    } else {
+      deviceType = 'desktop';
+    }
+
+    // Set attributes on root for CSS targeting
+    root.setAttribute('data-device', deviceType);
+    root.setAttribute('data-screen', screenClass);
+    root.setAttribute('data-orientation', width > height ? 'landscape' : 'portrait');
+    root.setAttribute('data-touch', hasTouch ? 'true' : 'false');
+  }
+
+  // Initial detection
+  const os = detectOS();
+  const browser = detectBrowser();
+  root.setAttribute('data-os', os);
+  root.setAttribute('data-browser', browser);
+
+  updateDimensions();
+
+  // Resize and orientation change listener with debounce
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateDimensions, 100);
+  }, { passive: true });
+
+  window.addEventListener('orientationchange', () => {
+    setTimeout(updateDimensions, 200);
+  }, { passive: true });
+}
+
+/* --------------------------------------------------------------------------
+   2. THEME SWITCHER (Linen vs Nocturne)
    -------------------------------------------------------------------------- */
 function initThemeToggle() {
-  const toggleBtn = document.getElementById('themeToggleBtn');
-  if (!toggleBtn) return;
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  if (!toggleBtns.length) return;
 
-  // Retrieve saved preference or default to light
   const savedTheme = localStorage.getItem('shuhari-theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
 
-  toggleBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const current = document.documentElement.getAttribute('data-theme') || 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('shuhari-theme', next);
+  toggleBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('shuhari-theme', next);
+    });
   });
 }
 
 /* --------------------------------------------------------------------------
-   2. HEADER SCROLL STATE
+   3. HEADER SCROLL STATE
    -------------------------------------------------------------------------- */
 function initHeaderScroll() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
   function onScroll() {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 20) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -56,7 +153,7 @@ function initHeaderScroll() {
 }
 
 /* --------------------------------------------------------------------------
-   3. PHILOSOPHY INTERACTIVE SWITCHER (守・破・離)
+   4. PHILOSOPHY INTERACTIVE SWITCHER (守・破・離)
    -------------------------------------------------------------------------- */
 function initPhilosophySwitcher() {
   const pills = document.querySelectorAll('.stage-pill');
@@ -73,7 +170,7 @@ function initPhilosophySwitcher() {
       cards.forEach((card) => {
         if (card.getAttribute('data-stage') === stage) {
           card.classList.add('highlight');
-          card.style.transform = 'translateY(-8px)';
+          card.style.transform = 'translateY(-6px)';
           card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
           card.classList.remove('highlight');
@@ -85,7 +182,7 @@ function initPhilosophySwitcher() {
 }
 
 /* --------------------------------------------------------------------------
-   4. PORTFOLIO FILTERING
+   5. PORTFOLIO FILTERING
    -------------------------------------------------------------------------- */
 function initPortfolioFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -114,7 +211,7 @@ function initPortfolioFilters() {
 }
 
 /* --------------------------------------------------------------------------
-   5. PROJECT DOSSIER MODAL / LIGHTBOX
+   6. PROJECT DOSSIER MODAL / LIGHTBOX
    -------------------------------------------------------------------------- */
 const PROJECT_DATABASE = {
   'prj-solis': {
@@ -202,12 +299,12 @@ function initProjectModal() {
     document.getElementById('modalProjectImg').alt = data.title;
 
     backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
   }
 
   function closeProject() {
     backdrop.classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
   }
 
   projectCards.forEach((card) => {
@@ -237,12 +334,12 @@ function initProjectModal() {
 }
 
 /* --------------------------------------------------------------------------
-   6. MATERIALITY ARCHIVE
+   7. MATERIALITY ARCHIVE
    -------------------------------------------------------------------------- */
 const MATERIALS_DATABASE = {
   'travertine': {
     name: 'Unfilled Roman Travertine',
-    provenance: 'Tivoli Quarries / Architectural Masonry',
+    provenance: 'Porous Geologic Vein',
     desc: 'Warm, porous limestone cut along the vein. Its tactile micro-cavities celebrate organic geologic time while providing cool thermal mass in tropical climates.',
     image: 'assets/images/material_detail.jpg'
   },
@@ -260,7 +357,7 @@ const MATERIALS_DATABASE = {
   },
   'stone': {
     name: 'Hand-Dry-Stacked Basalt Rock',
-    provenance: 'Regional Bedrock & Quarry Stone',
+    provenance: 'Regional Bedrock Masonry',
     desc: 'Rooted directly into natural site topography. Earthy, durable foundations supporting weightless glass and cantilevered terraces.',
     image: 'assets/images/hero_villa.jpg'
   }
@@ -300,7 +397,7 @@ function initMaterialityArchive() {
 }
 
 /* --------------------------------------------------------------------------
-   7. COMMISSION INQUIRY BUILDER
+   8. COMMISSION INQUIRY BUILDER
    -------------------------------------------------------------------------- */
 function initCommissionForm() {
   const form = document.getElementById('commissionForm');
@@ -336,28 +433,57 @@ function initCommissionForm() {
 }
 
 /* --------------------------------------------------------------------------
-   8. MOBILE NAVIGATION DRAWER
+   9. MOBILE NAVIGATION DRAWER & TOUCH EXPERIENCE
    -------------------------------------------------------------------------- */
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobileNavToggle');
   const navMenu = document.getElementById('navMenu');
+  const backdrop = document.getElementById('mobileNavBackdrop');
 
   if (!toggleBtn || !navMenu) return;
 
+  function openMenu() {
+    navMenu.classList.add('open');
+    toggleBtn.classList.add('active');
+    if (backdrop) backdrop.classList.add('open');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    toggleBtn.classList.remove('active');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+
   toggleBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    navMenu.classList.toggle('open');
+    if (navMenu.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  navMenu.querySelectorAll('.nav-link').forEach((link) => {
+  if (backdrop) {
+    backdrop.addEventListener('click', closeMenu);
+  }
+
+  navMenu.querySelectorAll('.nav-link, .mobile-drawer-cta').forEach((link) => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
+      closeMenu();
     });
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      closeMenu();
+    }
   });
 }
 
 /* --------------------------------------------------------------------------
-   9. SMOOTH SCROLL FOR IN-PAGE ANCHORS
+   10. SMOOTH SCROLL FOR IN-PAGE ANCHORS
    -------------------------------------------------------------------------- */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -367,9 +493,13 @@ function initSmoothScroll() {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+        const headerOffset = 76;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
         });
       }
     });

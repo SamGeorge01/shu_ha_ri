@@ -2,10 +2,17 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>shu . ha . ri — architecture studio</title>
   <meta name="description" content="shu.ha.ri architecture studio. Founded by Abin Thomas. Learn. Experiment. Transcend. Bespoke modern architectural residences across Kerala, Calicut, Kattappana, and Thiruvananthapuram.">
   <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <!-- Cross-device Web App Meta -->
+  <meta name="theme-color" content="#F8F6F1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -36,18 +43,32 @@
           <img src="assets/brand/logo-light.png" alt="shu.ha.ri architecture studio" class="brand-logo-img light-logo">
         </a>
 
-        <!-- Desktop Navigation Menu -->
+        <!-- Desktop & Mobile Navigation Menu -->
         <ul class="nav-menu" id="navMenu">
-          <li><a href="#works" class="nav-link">Works</a></li>
-          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
-          <li><a href="#ethos" class="nav-link">Ethos</a></li>
-          <li><a href="#founder" class="nav-link">Founder</a></li>
-          <li><a href="#disciplines" class="nav-link">Disciplines</a></li>
-          <li><a href="#materials" class="nav-link">Materiality</a></li>
-          <li><a href="#inquiry" class="nav-link">Contact</a></li>
+          <li><a href="#works" class="nav-link"><span>01</span> Works</a></li>
+          <li><a href="#philosophy" class="nav-link"><span>02</span> Philosophy</a></li>
+          <li><a href="#ethos" class="nav-link"><span>03</span> Ethos</a></li>
+          <li><a href="#founder" class="nav-link"><span>04</span> Founder</a></li>
+          <li><a href="#disciplines" class="nav-link"><span>05</span> Disciplines</a></li>
+          <li><a href="#materials" class="nav-link"><span>06</span> Materiality</a></li>
+          <li><a href="#inquiry" class="nav-link"><span>07</span> Contact</a></li>
+          
+          <!-- Dedicated Mobile Drawer Quick Actions -->
+          <li class="mobile-drawer-footer">
+            <a href="https://wa.me/919113947440?text=Hello%20Abin,%20I%20would%20like%20to%20inquire%20about%20an%20architectural%20commission%20with%20shu.ha.ri." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-minimal mobile-drawer-cta">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.48 3.64-8.12 8.12-8.12 2.17 0 4.21.85 5.75 2.38a8.07 8.07 0 0 1 2.37 5.74c0 4.48-3.65 8.13-8.12 8.13zm4.45-6.09c-.24-.12-1.45-.72-1.67-.8-.23-.09-.39-.12-.56.12-.17.24-.65.8-.8 0.97-.15.17-.3.2-.54.08-.24-.12-1.03-.38-1.96-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.45-.59 1.66-1.16.2-.58.2-1.07.14-1.17-.06-.11-.22-.17-.46-.29z"/>
+              </svg>
+              <span>WhatsApp (+91 9113947440)</span>
+            </a>
+            <a href="#inquiry" class="btn-inquire-cta mobile-drawer-cta">Commission Studio</a>
+            <div class="mono-tag" style="text-align: center; margin-top: 6px; font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.12em;">
+              CALICUT · KATTAPPANA · THIRUVANANTHAPURAM
+            </div>
+          </li>
         </ul>
 
-        <!-- Utilities (Theme Toggle, WhatsApp, Commission CTA) -->
+        <!-- Utilities (Theme Toggle, WhatsApp, Inquire, Mobile Hamburger) -->
         <div class="header-actions">
           <!-- Day / Night Theme Switcher -->
           <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Toggle Linen / Nocturne theme">
@@ -67,7 +88,7 @@
             </svg>
           </button>
 
-          <!-- WhatsApp Connect in site theme palette (No green!) -->
+          <!-- WhatsApp Connect (Desktop) -->
           <a href="https://wa.me/919113947440?text=Hello%20Abin,%20I%20would%20like%20to%20inquire%20about%20an%20architectural%20commission%20with%20shu.ha.ri." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-minimal" title="Chat on WhatsApp (+91 9113947440)">
             <svg viewBox="0 0 24 24">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.48 3.64-8.12 8.12-8.12 2.17 0 4.21.85 5.75 2.38a8.07 8.07 0 0 1 2.37 5.74c0 4.48-3.65 8.13-8.12 8.13zm4.45-6.09c-.24-.12-1.45-.72-1.67-.8-.23-.09-.39-.12-.56.12-.17.24-.65.8-.8 0.97-.15.17-.3.2-.54.08-.24-.12-1.03-.38-1.96-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.45-.59 1.66-1.16.2-.58.2-1.07.14-1.17-.06-.11-.22-.17-.46-.29z"/>
@@ -77,7 +98,7 @@
 
           <a href="#inquiry" class="btn-inquire-cta">Inquire</a>
 
-          <!-- Mobile Nav Toggle -->
+          <!-- Mobile Nav Hamburger Toggle -->
           <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
             <span></span>
             <span></span>
@@ -85,6 +106,9 @@
         </div>
       </div>
     </header>
+
+    <!-- Mobile Drawer Backdrop Overlay -->
+    <div id="mobileNavBackdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
 
     <main>
       <!-- ====================================================================
@@ -109,7 +133,7 @@
             <p class="text-subtle">
               An architectural design practice led by <strong>Abin Thomas</strong>. We craft bespoke living monuments that dialogue with the land, sculpted from pure light, tectonic stone, and fearless imagination.
             </p>
-            <p class="mono-tag" style="line-height: 2;">
+            <p class="mono-tag" style="line-height: 1.9;">
               PRACTICE BASED IN KERALA, INDIA<br>
               STUDIOS: CALICUT · KATTAPPANA · THIRUVANANTHAPURAM<br>
               COMMISSIONS ACROSS ALL KERALA
@@ -266,7 +290,7 @@
               <img src="assets/images/interior_shadows.jpg" alt="Interiors tuned for light and shadow">
               <div class="ethos-badge-floating">
                 <span class="mono-tag" style="color: var(--accent-gold);">Atmosphere</span>
-                <p style="font-size: 0.88rem; margin-top: 6px;">Tuned for natural daylight, oak joinery & lime-wash silence.</p>
+                <p style="font-size: 0.86rem; margin-top: 4px;">Tuned for natural daylight, oak joinery & lime-wash silence.</p>
               </div>
             </div>
           </div>
@@ -540,7 +564,7 @@
               <div class="material-caption-box">
                 <h4 id="materialPreviewName" style="font-size: 1.15rem; margin-bottom: 4px;">Unfilled Roman Travertine</h4>
                 <p id="materialPreviewProv" class="mono-tag" style="color: var(--accent-gold); margin-bottom: 8px;">Tivoli Quarries / Architectural Masonry</p>
-                <p id="materialPreviewDesc" style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                <p id="materialPreviewDesc" style="font-size: 0.88rem; line-height: 1.6; opacity: 0.9;">
                   Warm, porous limestone cut along the vein. Its tactile micro-cavities celebrate organic geologic time while providing cool thermal mass.
                 </p>
               </div>
@@ -648,7 +672,7 @@
     </main>
 
     <!-- ====================================================================
-         PROJECT DOSSIER MODAL / LIGHTBOX
+         PROJECT DOSSIER MODAL / LIGHTBOX (Mobile & Desktop Responsive)
          ==================================================================== -->
     <div id="projectModalBackdrop" class="modal-backdrop" aria-hidden="true">
       <div class="modal-panel" role="dialog" aria-modal="true">
@@ -683,11 +707,11 @@
           A monolithic private residence sculpted into the natural landscape. Villa Solis juxtaposes classical arched colonnade architecture with daring cantilevered structural engineering.
         </p>
 
-        <blockquote id="modalProjectQuote" class="serif-italic" style="border-left: 2px solid var(--accent-gold); padding-left: 20px; font-size: 1.15rem; color: var(--text-primary); margin: 30px 0;">
+        <blockquote id="modalProjectQuote" class="serif-italic" style="border-left: 2px solid var(--accent-gold); padding-left: 20px; font-size: 1.15rem; color: var(--text-primary); margin: 26px 0;">
           "Architecture at the precipice of earth and sky—mastering the weight of stone to frame weightlessness."
         </blockquote>
 
-        <div style="margin-top: 40px; display: flex; justify-content: flex-end; gap: 16px; flex-wrap: wrap;">
+        <div style="margin-top: 36px; display: flex; justify-content: flex-end; gap: 14px; flex-wrap: wrap;">
           <a href="https://wa.me/919113947440?text=Hello%20Abin,%20I%20am%20interested%20in%20a%20project%20similar%20to%20the%20one%20shown%20in%20the%20dossier." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-minimal">
             <svg viewBox="0 0 24 24">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.48 3.64-8.12 8.12-8.12 2.17 0 4.21.85 5.75 2.38a8.07 8.07 0 0 1 2.37 5.74c0 4.48-3.65 8.13-8.12 8.13zm4.45-6.09c-.24-.12-1.45-.72-1.67-.8-.23-.09-.39-.12-.56.12-.17.24-.65.8-.8 0.97-.15.17-.3.2-.54.08-.24-.12-1.03-.38-1.96-1.21-.73-.65-1.22-1.45-1.36-1.7-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.05 0 1.21.88 2.38 1 2.55.12.17 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.45-.59 1.66-1.16.2-.58.2-1.07.14-1.17-.06-.11-.22-.17-.46-.29z"/>
@@ -695,7 +719,7 @@
             <span>WhatsApp About This Project</span>
           </a>
 
-          <a href="#inquiry" class="btn-inquire-cta" onclick="document.getElementById('projectModalBackdrop').classList.remove('open'); document.body.style.overflow='';">
+          <a href="#inquiry" class="btn-inquire-cta" onclick="document.getElementById('projectModalBackdrop').classList.remove('open'); document.body.classList.remove('modal-open');">
             Inquire Commission
           </a>
         </div>
