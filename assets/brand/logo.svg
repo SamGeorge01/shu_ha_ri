@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" fill="currentColor">
+  <style>
+    .brand-title {
+      font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 52px;
+      font-weight: 400;
+      letter-spacing: 14px;
+    }
+    .brand-sub {
+      font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 12px;
+      opacity: 0.85;
+    }
+  </style>
+  <text x="50%" y="54" class="brand-title" text-anchor="middle">shu . ha . ri</text>
+  <text x="50%" y="96" class="brand-sub" text-anchor="middle">architecture studio</text>
+</svg>

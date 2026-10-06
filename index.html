@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shu . ha . ri — architecture studio</title>
+  <meta name="description" content="shu.ha.ri architecture studio. Learn. Experiment. Transcend. Bespoke modern architectural residences, monolithic sanctuaries, and minimalist spaces.">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Ambient Handmade Paper & Light Shadow Texture -->
+  <div class="bg-ambient-texture" aria-hidden="true"></div>
+
+  <!-- Architectural Millimeter Grid Markers -->
+  <div class="architectural-grid" aria-hidden="true">
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+  </div>
+
+  <div class="site-wrap">
+
+    <!-- ====================================================================
+         SITE NAVIGATION HEADER
+         ==================================================================== -->
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Studio Logo -->
+        <a href="#" class="brand-link" aria-label="shu.ha.ri architecture studio">
+          <img src="assets/brand/logo-dark.png" alt="shu.ha.ri architecture studio" class="brand-logo-img dark-logo">
+          <img src="assets/brand/logo-light.png" alt="shu.ha.ri architecture studio" class="brand-logo-img light-logo">
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#works" class="nav-link">Works</a></li>
+          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+          <li><a href="#ethos" class="nav-link">Ethos</a></li>
+          <li><a href="#disciplines" class="nav-link">Disciplines</a></li>
+          <li><a href="#materials" class="nav-link">Materiality</a></li>
+          <li><a href="#inquiry" class="nav-link">Inquire</a></li>
+        </ul>
+
+        <!-- Utilities (Clock, Theme Toggle, CTA) -->
+        <div class="header-actions">
+          <div class="studio-clock" title="Kyoto Studio Local Time">
+            <span class="clock-dot"></span>
+            <span id="studioClockDisplay">KYOTO 00:00:00 JST</span>
+          </div>
+
+          <!-- Theme Switcher (Linen vs Nocturne) -->
+          <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle light/dark theme" title="Switch palette (Linen / Nocturne)">
+            <svg class="theme-icon-moon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <svg class="theme-icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/>
+              <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+              <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/>
+              <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+
+          <a href="#inquiry" class="btn-inquire-cta">Commission Studio</a>
+
+          <!-- Mobile Nav Toggle -->
+          <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ====================================================================
+           HERO SECTION
+           ==================================================================== -->
+      <section class="hero-section container" id="hero">
+        <div class="hero-statement-wrap">
+          <div class="hero-motto-badge">
+            <span class="mono-tag">Studio Manifesto</span>
+            <span class="hero-motto-dot"></span>
+            <span class="mono-tag">守 · 破 · 離</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Learn. Experiment. <br>
+            <span class="emphasis">Transcend.</span>
+          </h1>
+
+          <div class="hero-sub-row">
+            <p class="text-subtle">
+              Where architectural discipline meets fearless imagination. We craft bespoke living monuments that dialogue with the land, sculpted from pure light and honest materiality.
+            </p>
+            <p class="mono-tag" style="line-height: 2;">
+              SELECT WORKS / 2024—2026<br>
+              RESIDENTIAL · SANCTUARY · PAVILION<br>
+              COORDINATES: 35.0116° N, 135.7681° E
+            </p>
+          </div>
+        </div>
+
+        <!-- Hero Architectural Showcase Frame -->
+        <div class="hero-visual-frame">
+          <img src="assets/images/hero_villa.jpg" alt="Villa Solis & Colonnade - Architectural Masterpiece" class="hero-visual-img">
+          <div class="hero-visual-tag">
+            <span class="tag-accent">COMMISSION 01</span>
+            <span>VILLA SOLIS & COLONNADE</span>
+            <span class="tag-accent">·</span>
+            <span>CANTILEVERED INFINITY RESIDENCE</span>
+          </div>
+        </div>
+
+        <!-- Hero Footer Bar & Scroll Prompt -->
+        <div class="hero-footer-bar">
+          <div class="ruler-ticks" aria-hidden="true">
+            <div class="ruler-tick tall"></div>
+            <div class="ruler-tick"></div>
+            <div class="ruler-tick"></div>
+            <div class="ruler-tick tall"></div>
+            <div class="ruler-tick"></div>
+            <div class="ruler-tick"></div>
+            <div class="ruler-tick tall"></div>
+          </div>
+
+          <a href="#works" class="scroll-indicator">
+            <span>Explore Works</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           THE SHU-HA-RI PHILOSOPHY (3 PILLARS)
+           ==================================================================== -->
+      <section class="section philosophy-section" id="philosophy">
+        <div class="container">
+          <div class="section-header">
+            <span class="mono-tag">The Guiding Philosophy</span>
+            <h2 class="heading-h2">Three Stages of Spatial Mastery</h2>
+            <p class="text-subtle" style="max-width: 620px;">
+              Rooted in centuries of classical craft, our studio progresses through three fundamental stages on every commission.
+            </p>
+          </div>
+
+          <!-- Interactive Stage Selection Pills -->
+          <div class="stage-nav-pills" role="tablist">
+            <button class="stage-pill active" data-stage="shu">
+              <span class="kanji-char">守</span>
+              <span>01. Shu — Learn</span>
+            </button>
+            <button class="stage-pill" data-stage="ha">
+              <span class="kanji-char">破</span>
+              <span>02. Ha — Experiment</span>
+            </button>
+            <button class="stage-pill" data-stage="ri">
+              <span class="kanji-char">離</span>
+              <span>03. Ri — Transcend</span>
+            </button>
+          </div>
+
+          <!-- Philosophy Cards Container -->
+          <div class="philosophy-cards-container">
+            <!-- Card 1: SHU -->
+            <div class="philo-card highlight" data-stage="shu">
+              <span class="card-kanji-bg">守</span>
+              <div>
+                <div class="card-num">STAGE 01 / 03</div>
+                <h3 class="card-stage-title">Shu <span class="card-kanji-glyph">(守)</span></h3>
+                <div class="card-stage-verb">Learn & Master the Fundamentals</div>
+                <p class="card-description">
+                  This initial stage focuses on learning and mastering the fundamentals. We begin with profound respect for structural physics, solar geometry, material load tolerances, and classical architectural proportions.
+                </p>
+              </div>
+              <ul class="card-details-list">
+                <li>Topographic site & solar orientation</li>
+                <li>Pure material honesty & structural physics</li>
+                <li>Mastery of classical geometries</li>
+              </ul>
+            </div>
+
+            <!-- Card 2: HA -->
+            <div class="philo-card" data-stage="ha">
+              <span class="card-kanji-bg">破</span>
+              <div>
+                <div class="card-num">STAGE 02 / 03</div>
+                <h3 class="card-stage-title">Ha <span class="card-kanji-glyph">(破)</span></h3>
+                <div class="card-stage-verb">Experiment & Innovate Solutions</div>
+                <p class="card-description">
+                  Exploring possibilities & innovative solutions, experimenting with new approaches. Once fundamentals are mastered, we push boundaries—daring cantilevers, breaking conventional thresholds between indoor and nature, and contrasting raw stone with ethereal glass.
+                </p>
+              </div>
+              <ul class="card-details-list">
+                <li>Weightless cantilevers & glass integration</li>
+                <li>Dissolving boundaries between room and landscape</li>
+                <li>Custom architectural engineering</li>
+              </ul>
+            </div>
+
+            <!-- Card 3: RI -->
+            <div class="philo-card" data-stage="ri">
+              <span class="card-kanji-bg">離</span>
+              <div>
+                <div class="card-num">STAGE 03 / 03</div>
+                <h3 class="card-stage-title">Ri <span class="card-kanji-glyph">(離)</span></h3>
+                <div class="card-stage-verb">Transcend Conventional Thinking</div>
+                <p class="card-description">
+                  Transcend conventional thinking and create truly original and innovative designs. Free from dogma, the building ceases to be a mere structure and transforms into an enduring sanctuary of light, silence, and human transcendence.
+                </p>
+              </div>
+              <ul class="card-details-list">
+                <li>Bespoke spatial choreography</li>
+                <li>Timeless wabi-sabi atmosphere</li>
+                <li>Vision transformed into permanent reality</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           STUDIO ETHOS & EDITORIAL STATEMENT (from Image 2)
+           ==================================================================== -->
+      <section class="section ethos-section" id="ethos">
+        <div class="container">
+          <div class="ethos-grid">
+            <!-- Quote Block from Image 2 -->
+            <div class="ethos-quote-block">
+              <span class="mono-tag">The Studio Ethos</span>
+              <p class="ethos-p1">
+                <span class="serif-italic">shu.ha.ri</span> — where we learn from experiences, experiment on executions and transcend your expectations.
+              </p>
+              <p class="ethos-p2">
+                Here, architectural excellence meets bold imagination resulting in bespoke, unparalleled designs.
+              </p>
+              <p class="ethos-p2">
+                Each project is approached with dedication to detail, ensuring every element—down to the final stone—reflects excellence and intent. This is where form meets function, and vision becomes reality.
+              </p>
+              <div class="mono-tag" style="color: var(--accent-gold);">
+                — SHU.HA.RI DESIGN PRINCIPLES
+              </div>
+            </div>
+
+            <!-- Visual Frame capturing Light, Wood & Shadow -->
+            <div class="ethos-visual-frame">
+              <img src="assets/images/interior_shadows.jpg" alt="Interiors tuned for light and shadow">
+              <div class="ethos-badge-floating">
+                <span class="mono-tag" style="color: var(--accent-gold);">Atmosphere</span>
+                <p style="font-size: 0.88rem; margin-top: 6px;">Tuned for natural daylight, oak joinery & lime-wash silence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SELECTED WORKS / PORTFOLIO
+           ==================================================================== -->
+      <section class="section" id="works">
+        <div class="container">
+          <div class="section-header-row">
+            <div class="section-header" style="margin-bottom: 0;">
+              <span class="mono-tag">Selected Portfolio</span>
+              <h2 class="heading-h2">Bespoke Commissions</h2>
+            </div>
+
+            <!-- Filters -->
+            <div class="portfolio-filter-bar" role="tablist">
+              <button class="filter-btn active" data-filter="all">All Works (05)</button>
+              <button class="filter-btn" data-filter="residence">Residences</button>
+              <button class="filter-btn" data-filter="courtyard">Courtyards</button>
+              <button class="filter-btn" data-filter="sanctuary">Sanctuaries</button>
+            </div>
+          </div>
+
+          <div class="hairline"></div>
+
+          <!-- Editorial Portfolio Grid -->
+          <div class="portfolio-grid">
+
+            <!-- Project 01: Villa Solis (Span 7) -->
+            <article class="project-card span-7" data-category="residence" data-project-id="prj-solis">
+              <div class="project-media-wrapper">
+                <img src="assets/images/hero_villa.jpg" alt="Villa Solis & Colonnade" class="project-img" loading="lazy">
+                <div class="project-view-indicator">View</div>
+              </div>
+              <div class="project-meta-row">
+                <h3 class="project-title">Villa Solis & Colonnade</h3>
+                <span class="mono-tag">01 / 2025</span>
+              </div>
+              <div class="project-specs">
+                <span>Aegean Coastline</span>
+                <span>·</span>
+                <span>Cantilevered Glass Pool & Arched Colonnade</span>
+              </div>
+            </article>
+
+            <!-- Project 02: Zen Courtyard House (Span 5) -->
+            <article class="project-card span-5" data-category="courtyard" data-project-id="prj-courtyard">
+              <div class="project-media-wrapper">
+                <img src="assets/images/courtyard_aerial.jpg" alt="The Zen Courtyard House" class="project-img" loading="lazy">
+                <div class="project-view-indicator">View</div>
+              </div>
+              <div class="project-meta-row">
+                <h3 class="project-title">The Zen Courtyard House</h3>
+                <span class="mono-tag">02 / 2024</span>
+              </div>
+              <div class="project-specs">
+                <span>Mallorca Coast</span>
+                <span>·</span>
+                <span>Lap Pool & Black Pine Garden</span>
+              </div>
+            </article>
+
+            <!-- Project 03: Monolith at Twilight (Span 12) -->
+            <article class="project-card span-12" data-category="sanctuary" data-project-id="prj-twilight">
+              <div class="project-media-wrapper">
+                <img src="assets/images/exterior_twilight.jpg" alt="Monolith at Twilight" class="project-img" loading="lazy">
+                <div class="project-view-indicator">View</div>
+              </div>
+              <div class="project-meta-row">
+                <h3 class="project-title">Monolith at Twilight</h3>
+                <span class="mono-tag">03 / 2026</span>
+              </div>
+              <div class="project-specs">
+                <span>Alentejo Plateau</span>
+                <span>·</span>
+                <span>Board-Formed Concrete Linear Pavilion & Basalt Hearth</span>
+              </div>
+            </article>
+
+            <!-- Project 04: Pavilion of Shadows (Span 6) -->
+            <article class="project-card span-6" data-category="sanctuary" data-project-id="prj-shadows">
+              <div class="project-media-wrapper">
+                <img src="assets/images/interior_shadows.jpg" alt="Pavilion of Shadows & Oak" class="project-img" loading="lazy">
+                <div class="project-view-indicator">View</div>
+              </div>
+              <div class="project-meta-row">
+                <h3 class="project-title">Pavilion of Shadows & Oak</h3>
+                <span class="mono-tag">04 / 2025</span>
+              </div>
+              <div class="project-specs">
+                <span>Hakone Reserve</span>
+                <span>·</span>
+                <span>White Oak Louvers & Hand-Troweled Lime Plaster</span>
+              </div>
+            </article>
+
+            <!-- Project 05: Tectonic Materiality (Span 6) -->
+            <article class="project-card span-6" data-category="residence" data-project-id="prj-tectonics">
+              <div class="project-media-wrapper">
+                <img src="assets/images/material_detail.jpg" alt="Tectonic Materiality Study" class="project-img" loading="lazy">
+                <div class="project-view-indicator">View</div>
+              </div>
+              <div class="project-meta-row">
+                <h3 class="project-title">Tectonic Materiality Study</h3>
+                <span class="mono-tag">05 / 2024</span>
+              </div>
+              <div class="project-specs">
+                <span>Kyoto Atelier</span>
+                <span>·</span>
+                <span>Unfilled Roman Travertine & Blackened Steel</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           DISCIPLINES & SERVICES
+           ==================================================================== -->
+      <section class="section" id="disciplines">
+        <div class="container">
+          <div class="section-header">
+            <span class="mono-tag">Capabilities</span>
+            <h2 class="heading-h2">Core Disciplines</h2>
+            <p class="text-subtle" style="max-width: 600px;">
+              We execute holistic architecture where structure, interiors, landscape, and bespoke objects converge into a unified poetic entity.
+            </p>
+          </div>
+
+          <div class="disciplines-list">
+            <div class="discipline-item">
+              <span class="discipline-num">01</span>
+              <h3 class="discipline-name">Architecture & Masterplanning</h3>
+              <p class="discipline-desc">
+                Rigorous topographical analysis, solar path orchestration, and structural engineering. We shape low-profile silhouettes that integrate seamlessly into pristine natural landscapes.
+              </p>
+            </div>
+
+            <div class="discipline-item">
+              <span class="discipline-num">02</span>
+              <h3 class="discipline-name">Interior Architecture & Light</h3>
+              <p class="discipline-desc">
+                Crafting tactile interior sanctuaries. Seamless floor recesses, concealed atmospheric lighting, and hand-troweled lime-wash surfaces that celebrate the slow passage of shadow.
+              </p>
+            </div>
+
+            <div class="discipline-item">
+              <span class="discipline-num">03</span>
+              <h3 class="discipline-name">Courtyards & Landscape Symbiosis</h3>
+              <p class="discipline-desc">
+                Blurring the line between the built habitat and the wild. Japanese dry rock gardens, water mirror channels, and indigenous flora framed by monumental arched colonnades.
+              </p>
+            </div>
+
+            <div class="discipline-item">
+              <span class="discipline-num">04</span>
+              <h3 class="discipline-name">Bespoke Living Objects & Stonework</h3>
+              <p class="discipline-desc">
+                Commissioned monolithic stone hearths, custom architectural brass hardware, and bespoke oak joinery designed exclusively for each residence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TACTILE MATERIALITY ARCHIVE
+           ==================================================================== -->
+      <section class="section materiality-section" id="materials">
+        <div class="container">
+          <div class="section-header">
+            <span class="mono-tag">Material Integrity</span>
+            <h2 class="heading-h2">Down to the Final Stone</h2>
+            <p class="text-subtle" style="max-width: 640px;">
+              We reject artificial veneers. Our architecture is composed of authentic geologic materials that weather with dignity and age into timeless beauty.
+            </p>
+          </div>
+
+          <div class="materials-layout">
+            <!-- Swatches List -->
+            <div class="material-swatches">
+              <div class="swatch-card active" data-material="travertine">
+                <div>
+                  <h4 class="swatch-name">Unfilled Roman Travertine</h4>
+                  <p class="swatch-provenance">Tivoli Quarries, Italy</p>
+                </div>
+                <span class="mono-tag">01</span>
+              </div>
+
+              <div class="swatch-card" data-material="concrete">
+                <div>
+                  <h4 class="swatch-name">Board-Formed Concrete</h4>
+                  <p class="swatch-provenance">Artisanal Cedar Grain Formwork</p>
+                </div>
+                <span class="mono-tag">02</span>
+              </div>
+
+              <div class="swatch-card" data-material="oak">
+                <div>
+                  <h4 class="swatch-name">White Oak Louvers</h4>
+                  <p class="swatch-provenance">Sustainable Japanese Forestry</p>
+                </div>
+                <span class="mono-tag">03</span>
+              </div>
+
+              <div class="swatch-card" data-material="stone">
+                <div>
+                  <h4 class="swatch-name">Dry-Stacked Basalt Rock</h4>
+                  <p class="swatch-provenance">Volcanic Bedrock Masonry</p>
+                </div>
+                <span class="mono-tag">04</span>
+              </div>
+            </div>
+
+            <!-- Material Detail Preview Frame -->
+            <div class="material-preview-frame">
+              <img id="materialPreviewImg" src="assets/images/material_detail.jpg" alt="Material Detail">
+              <div class="material-caption-box">
+                <h4 id="materialPreviewName" style="font-size: 1.15rem; margin-bottom: 4px;">Unfilled Roman Travertine</h4>
+                <p id="materialPreviewProv" class="mono-tag" style="color: var(--accent-gold); margin-bottom: 8px;">Tivoli Quarries, Italy</p>
+                <p id="materialPreviewDesc" style="font-size: 0.9rem; line-height: 1.6; opacity: 0.9;">
+                  Warm, porous limestone cut along the vein. Its tactile micro-cavities celebrate geologic time while providing cool thermal mass.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           COMMISSION INQUIRY
+           ==================================================================== -->
+      <section class="section" id="inquiry">
+        <div class="container">
+          <div class="section-header">
+            <span class="mono-tag">Engage The Studio</span>
+            <h2 class="heading-h2">Commission an Architectural Vision</h2>
+            <p class="text-subtle" style="max-width: 600px;">
+              We undertake a strictly limited selection of private commissions per calendar year to ensure uncompromising dedication to each detail.
+            </p>
+          </div>
+
+          <div class="inquiry-grid">
+            <!-- Direct Contacts & Studio Info -->
+            <div class="inquiry-contacts">
+              <div class="inquiry-contact-item">
+                <h4>Kyoto Atelier</h4>
+                <p>Kita-ku, Kyoto 603-8205<br>Japan</p>
+              </div>
+
+              <div class="inquiry-contact-item">
+                <h4>Direct Inquiries</h4>
+                <p><a href="mailto:atelier@shuhari.design">atelier@shuhari.design</a><br>+81 75 491 8020</p>
+              </div>
+
+              <div class="inquiry-contact-item">
+                <h4>Current Availability</h4>
+                <p>Accepting commissions for Q3 2026 onwards</p>
+              </div>
+
+              <div class="inquiry-contact-item">
+                <h4>Monograph Inquiries</h4>
+                <p>press@shuhari.design</p>
+              </div>
+            </div>
+
+            <!-- Commission Brief Form -->
+            <div>
+              <form id="commissionForm">
+                <div class="form-group">
+                  <label class="form-label">Typology</label>
+                  <div class="typology-pills">
+                    <button type="button" class="typology-pill-btn selected">Private Residence</button>
+                    <button type="button" class="typology-pill-btn">Retreat & Sanctuary</button>
+                    <button type="button" class="typology-pill-btn">Courtyard Villa</button>
+                    <button type="button" class="typology-pill-btn">Experimental Space</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="clientName">Your Name / Principal</label>
+                  <input type="text" id="clientName" class="form-input" placeholder="e.g. Kenzo Tange" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="clientEmail">Email Address</label>
+                  <input type="email" id="clientEmail" class="form-input" placeholder="e.g. contact@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="siteLocation">Site Location & Country</label>
+                  <input type="text" id="siteLocation" class="form-input" placeholder="e.g. Kyoto Hills / Mediterranean Coast / California" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="projectNotes">Brief & Vision Notes</label>
+                  <textarea id="projectNotes" class="form-textarea" rows="4" placeholder="Describe the site terrain, spatial aspirations, or material preferences..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-commission">Transmit Commission Brief</button>
+              </form>
+
+              <!-- Success Notification Banner -->
+              <div id="formSuccessBanner" class="form-success-banner">
+                <span class="mono-tag" style="color: var(--accent-gold);">Inquiry Registered</span>
+                <h3 style="margin: 12px 0 8px;">SHR-2026-COMMISSION</h3>
+                <p class="text-subtle">Thank you. The studio will review your site aspirations and initiate contact within 48 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         PROJECT DOSSIER MODAL / LIGHTBOX
+         ==================================================================== -->
+    <div id="projectModalBackdrop" class="modal-backdrop" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true">
+        <button id="projectModalClose" class="modal-close-btn" aria-label="Close dossier">&times;</button>
+
+        <span id="modalProjectTag" class="mono-tag" style="color: var(--accent-gold);">Private Residence</span>
+        <h2 id="modalProjectTitle" class="heading-h2" style="margin-top: 8px;">Villa Solis & Colonnade</h2>
+        
+        <img id="modalProjectImg" src="assets/images/hero_villa.jpg" alt="" class="modal-hero-img">
+
+        <div class="modal-specs-grid">
+          <div>
+            <div class="spec-cell-label">Location</div>
+            <div id="modalProjectLocation" class="spec-cell-val">Aegean Coastline</div>
+          </div>
+          <div>
+            <div class="spec-cell-label">Year Completed</div>
+            <div id="modalProjectYear" class="spec-cell-val">2025</div>
+          </div>
+          <div>
+            <div class="spec-cell-label">Enclosed Area</div>
+            <div id="modalProjectArea" class="spec-cell-val">920 m²</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <div class="spec-cell-label">Material Palette</div>
+          <p id="modalProjectMaterials" style="font-size: 0.95rem; color: var(--text-secondary);">Roman Travertine, Fair-Faced Concrete, Low-Iron Glass</p>
+        </div>
+
+        <p id="modalProjectDesc" class="text-subtle" style="margin-bottom: 24px; font-size: 1rem;">
+          A monolithic private residence sculpted into the natural cliffside. Villa Solis juxtaposes classical arched colonnade architecture with daring cantilevered engineering.
+        </p>
+
+        <blockquote id="modalProjectQuote" class="serif-italic" style="border-left: 2px solid var(--accent-gold); padding-left: 20px; font-size: 1.15rem; color: var(--text-primary); margin: 30px 0;">
+          "Architecture at the precipice of earth and sky—mastering the weight of stone to frame weightlessness."
+        </blockquote>
+
+        <div style="margin-top: 40px; display: flex; justify-content: flex-end;">
+          <a href="#inquiry" class="btn-inquire-cta" onclick="document.getElementById('projectModalBackdrop').classList.remove('open'); document.body.style.overflow='';">
+            Inquire About Similar Commission
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         SITE FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-brandmark-hero">shu . ha . ri</div>
+
+        <div class="footer-top">
+          <div>
+            <img src="assets/brand/logo-dark.png" alt="shu.ha.ri architecture studio" class="brand-logo-img dark-logo" style="margin-bottom: 16px;">
+            <img src="assets/brand/logo-light.png" alt="shu.ha.ri architecture studio" class="brand-logo-img light-logo" style="margin-bottom: 16px;">
+            <p class="text-subtle" style="max-width: 380px; font-size: 0.9rem;">
+              A bespoke architectural design studio exploring the transition from foundation mastery to spatial transcendence.
+            </p>
+          </div>
+
+          <ul class="footer-links-row">
+            <li><a href="#works" class="nav-link">Works</a></li>
+            <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+            <li><a href="#ethos" class="nav-link">Ethos</a></li>
+            <li><a href="#disciplines" class="nav-link">Disciplines</a></li>
+            <li><a href="#inquiry" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div>
+            <span class="mono-tag">Connect</span>
+            <div style="display: flex; gap: 20px; margin-top: 12px;">
+              <a href="#" class="mono-tag" style="color: var(--text-primary);">Instagram</a>
+              <a href="#" class="mono-tag" style="color: var(--text-primary);">ArchDaily</a>
+              <a href="#" class="mono-tag" style="color: var(--text-primary);">Leibal</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 shu.ha.ri architecture studio. All rights reserved.</div>
+          <div class="mono-tag">KYOTO · TOKYO · INTERNATIONAL COMMISSIONS</div>
+          <div><a href="#" class="mono-tag">Back to Top &uarr;</a></div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
