@@ -5,16 +5,25 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initDeviceIntelligence();
-  initThemeToggle();
-  initHeaderScroll();
-  initPhilosophySwitcher();
-  initPortfolioFilters();
-  initProjectModal();
-  initMaterialityArchive();
-  initCommissionForm();
-  initMobileNav();
-  initSmoothScroll();
+  const inits = [
+    initDeviceIntelligence,
+    initThemeToggle,
+    initHeaderScroll,
+    initPhilosophySwitcher,
+    initPortfolioFilters,
+    initProjectModal,
+    initMaterialityArchive,
+    initCommissionForm,
+    initMobileNav,
+    initSmoothScroll
+  ];
+  inits.forEach(fn => {
+    try {
+      fn();
+    } catch (e) {
+      console.warn(`[shu.ha.ri] Module ${fn.name} notice:`, e);
+    }
+  });
   console.log('shu.ha.ri architecture studio engine loaded successfully.');
 });
 
@@ -119,7 +128,11 @@ function initThemeToggle() {
   const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
   if (!toggleBtns.length) return;
 
-  const savedTheme = localStorage.getItem('shuhari-theme') || 'light';
+  let savedTheme = 'light';
+  try {
+    savedTheme = localStorage.getItem('shuhari-theme') || 'light';
+  } catch (e) {}
+
   document.documentElement.setAttribute('data-theme', savedTheme);
 
   toggleBtns.forEach((btn) => {
@@ -128,7 +141,9 @@ function initThemeToggle() {
       const current = document.documentElement.getAttribute('data-theme') || 'light';
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('shuhari-theme', next);
+      try {
+        localStorage.setItem('shuhari-theme', next);
+      } catch (e) {}
     });
   });
 }
@@ -445,6 +460,7 @@ function initMobileNav() {
   function openMenu() {
     navMenu.classList.add('open');
     toggleBtn.classList.add('active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
     if (backdrop) backdrop.classList.add('open');
     document.body.classList.add('menu-open');
   }
@@ -452,6 +468,7 @@ function initMobileNav() {
   function closeMenu() {
     navMenu.classList.remove('open');
     toggleBtn.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
     if (backdrop) backdrop.classList.remove('open');
     document.body.classList.remove('menu-open');
   }
@@ -466,7 +483,10 @@ function initMobileNav() {
   });
 
   if (backdrop) {
-    backdrop.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMenu();
+    });
   }
 
   navMenu.querySelectorAll('.nav-link, .mobile-drawer-cta').forEach((link) => {

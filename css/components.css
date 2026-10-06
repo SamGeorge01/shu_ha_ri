@@ -318,17 +318,19 @@
     border-left: 1px solid var(--border-subtle);
     transform: translateX(100%);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    z-index: 99;
+    z-index: 100;
     box-shadow: -15px 0 50px rgba(0, 0, 0, 0.15);
-    transition: transform 0.45s var(--ease-out-expo), opacity 0.35s ease;
+    transition: transform 0.45s var(--ease-out-expo), opacity 0.35s ease, visibility 0.45s;
   }
   
   .nav-menu.open {
     transform: translateX(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
 
@@ -1700,4 +1702,18 @@
   padding-top: 20px;
   flex-wrap: wrap;
   gap: 14px;
+}
+
+/* Touch optimization */
+button,
+a,
+.mobile-nav-toggle,
+.theme-toggle-btn,
+.stage-pill,
+.filter-btn,
+.swatch-card,
+.btn-whatsapp-minimal,
+.btn-inquire-cta {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
